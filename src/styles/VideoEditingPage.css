@@ -1,0 +1,590 @@
+/* ==========================================================================
+   Video Editing Page Styles
+   Pure White Background (#ffffff) & Click On Media Brand Colors
+   ========================================================================== */
+
+.video-page-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding-top: 105px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.title-logo-gradient {
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 38%, #de3f78 72%, #ff6b00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+}
+
+.video-tag {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #7e22ce;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.video-center-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.video-section-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2rem, 3.2vw, 2.9rem);
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+   1. Hero Section
+   ------------------------------------------------------------------------- */
+.video-hero-section {
+  padding: 40px 0 80px 0;
+  background: radial-gradient(circle at 10% 20%, rgba(126, 34, 206, 0.05) 0%, transparent 50%);
+}
+
+.video-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.video-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(126, 34, 206, 0.08);
+  border: 1px solid rgba(126, 34, 206, 0.25);
+  color: #7e22ce;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff6b00;
+  box-shadow: 0 0 8px rgba(255, 107, 0, 0.8);
+}
+
+.video-main-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2.3rem, 3.8vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  margin: 0 0 20px 0;
+}
+
+.video-hero-desc {
+  font-size: 1.12rem;
+  line-height: 1.68;
+  color: #475569;
+  margin: 0 0 32px 0;
+}
+
+.video-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-video-primary {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 36%, #de3f78 68%, #ff6b00 100%);
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 14px 34px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(126, 34, 206, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-video-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(255, 107, 0, 0.45);
+}
+
+.btn-video-secondary {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #0284c7;
+  color: #0284c7;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1rem;
+  font-weight: 800;
+  padding: 13px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-video-secondary:hover {
+  background: rgba(2, 132, 199, 0.08);
+  border-color: #ff6b00;
+  color: #ff6b00;
+  transform: translateY(-2px);
+}
+
+.video-hero-visual {
+  position: relative;
+}
+
+.video-player-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.14), 0 0 35px rgba(126, 34, 206, 0.15);
+  border: 1.5px solid #e2e8f0;
+  background: #000c1e;
+  height: 380px;
+}
+
+.video-preview-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-floating-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 12, 28, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(222, 63, 120, 0.4);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.2); }
+}
+
+/* -------------------------------------------------------------------------
+   2. Services Section
+   ------------------------------------------------------------------------- */
+.video-services-section {
+  padding: 80px 0;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.video-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.video-service-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 26px;
+  padding: 36px 30px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.video-service-card:hover {
+  transform: translateY(-5px);
+  border-color: #0284c7;
+  box-shadow: 0 18px 40px rgba(2, 132, 199, 0.12);
+}
+
+.service-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: rgba(126, 34, 206, 0.08);
+  color: #7e22ce;
+  border: 1px solid rgba(126, 34, 206, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  transition: all 0.25s ease;
+}
+
+.video-service-card:hover .service-icon-box {
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 100%);
+  color: #ffffff;
+  border-color: transparent;
+  transform: scale(1.08) rotate(4deg);
+}
+
+.service-icon-box svg {
+  width: 26px;
+  height: 26px;
+}
+
+.service-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+   3. Pricing Section
+   ------------------------------------------------------------------------- */
+.video-pricing-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.video-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.video-pricing-card {
+  position: relative;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s ease;
+}
+
+.video-pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: #0284c7;
+  box-shadow: 0 20px 45px rgba(2, 132, 199, 0.12);
+}
+
+.video-pricing-card.popular {
+  border-color: #7e22ce;
+  box-shadow: 0 18px 45px rgba(126, 34, 206, 0.15);
+  background: #ffffff;
+}
+
+.popular-pill {
+  position: absolute;
+  top: -14px;
+  right: 28px;
+  background: linear-gradient(135deg, #ff6b00 0%, #de3f78 100%);
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pkg-badge {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #7e22ce;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.pkg-name {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+
+.pkg-price-wrap {
+  margin-bottom: 24px;
+}
+
+.pkg-price {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.pkg-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.pkg-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.94rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.check-icon {
+  color: #22c55e;
+  font-weight: 900;
+}
+
+.btn-pkg-action {
+  width: 100%;
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.96rem;
+  font-weight: 800;
+  padding: 13px 20px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.video-pricing-card.popular .btn-pkg-action {
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 8px 20px rgba(126, 34, 206, 0.3);
+}
+
+.btn-pkg-action:hover {
+  background: #ff6b00;
+  color: #ffffff;
+  border-color: #ff6b00;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------------------
+   4. FAQs Section
+   ------------------------------------------------------------------------- */
+.video-faqs-section {
+  padding: 90px 0;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.video-faqs-list {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.video-faq-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.video-faq-item.open {
+  border-color: #0284c7;
+}
+
+.video-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 26px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-toggle-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7e22ce;
+  margin-left: 16px;
+}
+
+.video-faq-answer {
+  padding: 0 26px 22px 26px;
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: #475569;
+}
+
+/* -------------------------------------------------------------------------
+   5. CTA Bar
+   ------------------------------------------------------------------------- */
+.video-cta-bar {
+  background: #000c1e;
+  color: #ffffff;
+  padding: 55px 0;
+  border-top: 3px solid;
+  border-image: linear-gradient(90deg, #0284c7, #7e22ce, #de3f78, #ff6b00) 1;
+}
+
+.video-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.cta-left h3 {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.cta-left p {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin: 0;
+}
+
+.cta-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-cta-white {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  color: #000c1e;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px 30px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.2);
+  transition: all 0.25s ease;
+}
+
+.btn-cta-white:hover {
+  background: #ff6b00;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 107, 0, 0.4);
+}
+
+.btn-cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  background: #25D366;
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+}
+
+.btn-cta-whatsapp:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.5);
+}
+
+/* -------------------------------------------------------------------------
+   Responsive Breakpoints
+   ------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px) {
+  .video-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .video-services-grid,
+  .video-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-page-wrapper {
+    padding-top: 85px;
+  }
+
+  .video-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Audio Toggle Styles
+   ========================================================================== */
+
+.audio-toggle-container {
+  position: absolute;
+  bottom: 96px;
+  right: 34px;
+  z-index: 20;
+}
+
+.audio-toggle-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.audio-toggle-btn:hover {
+  transform: scale(1.1);
+  background: rgba(15, 23, 42, 0.9);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.audio-icon {
+  width: 22px;
+  height: 22px;
+  stroke: #ffffff;
+}
+
+@media screen and (max-width: 1024px) {
+  .audio-toggle-container {
+    right: 28px;
+    bottom: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .audio-toggle-container {
+    right: 20px;
+    bottom: 24px;
+  }
+
+  .audio-toggle-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .audio-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

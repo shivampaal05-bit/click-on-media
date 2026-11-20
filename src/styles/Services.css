@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Services Section Styles
+   Matches the exact card layout, rounded arch images, and typography
+   from the reference video
+   ========================================================================== */
+
+.services-section {
+  background-color: #ffffff;
+  color: #111827;
+  padding: 95px 24px 105px;
+  position: relative;
+}
+
+.services-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 64px;
+}
+
+.services-tagline {
+  display: inline-block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e11d48;
+  background: #ffe4e6;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+.services-subtext {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin-top: -36px;
+}
+
+/* 4-Column Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* Service Card */
+.service-card {
+  background: #ffffff;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  border-color: rgba(203, 213, 225, 0.9);
+}
+
+/* Image Container with Top-Border-Radius & Pastel Color Tints */
+.card-image-box {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  border-top-left-radius: 27px;
+  border-top-right-radius: 27px;
+  padding: 12px 12px 0 12px;
+  transition: background-color 0.3s ease;
+}
+
+.card-image-box.badge-blue {
+  background: linear-gradient(180deg, #e0f2fe 0%, #f0f9ff 100%);
+}
+
+.card-image-box.badge-emerald {
+  background: linear-gradient(180deg, #dcfce7 0%, #f0fdf4 100%);
+}
+
+.card-image-box.badge-orange {
+  background: linear-gradient(180deg, #ffedd5 0%, #fff7ed 100%);
+}
+
+.card-image-box.badge-purple {
+  background: linear-gradient(180deg, #ede9fe 0%, #f5f3ff 100%);
+}
+
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.service-card:hover .service-img {
+  transform: scale(1.05);
+}
+
+/* Card Body Content */
+.card-body {
+  padding: 26px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Feature Tag Pills */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tag-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.service-card:hover .tag-pill {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* Action Button */
+.btn-card-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 18px;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.btn-card-action svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.25s ease;
+}
+
+.btn-card-action:hover {
+  background: var(--gradient-brand);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(255, 46, 147, 0.3);
+}
+
+.btn-card-action:hover svg {
+  transform: translateX(4px);
+  stroke: #ffffff;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .services-section {
+    padding: 60px 18px 75px;
+  }
+
+  .services-header {
+    margin-bottom: 40px;
+  }
+
+  .services-subtext {
+    font-size: 0.98rem;
+    margin-top: -24px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .card-image-box {
+    height: 210px;
+  }
+}

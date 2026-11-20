@@ -1,0 +1,1147 @@
+/* ==========================================================================
+   Click On Media - Courses Page Styling (Full-Stack & MERN Training)
+   Clean White Background Theme matching Click On Media Brand Logo Colors
+   Logo Colors: Blue (#0284c7), Purple (#7e22ce), Pink (#de3f78), Orange (#ff6b00)
+   ========================================================================== */
+
+.courses-page-container {
+  width: 100%;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding-top: calc(var(--nav-height, 84px) + 12px);
+  padding-bottom: 60px;
+  min-height: 100vh;
+  font-family: var(--font-body, 'Inter', system-ui, -apple-system, sans-serif);
+}
+
+.container-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   1. Breadcrumb Navigation
+   ========================================================================== */
+.courses-breadcrumb-bar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 14px 0;
+  margin-bottom: 32px;
+}
+
+.breadcrumb-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.breadcrumb-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #0284c7;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-home-link:hover {
+  color: #ff6b00;
+}
+
+.breadcrumb-home-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.breadcrumb-separator {
+  color: #cbd5e1;
+}
+
+.breadcrumb-current {
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Typography & Logo Brand Gradients
+   ========================================================================== */
+.title-logo-gradient {
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 36%, #de3f78 68%, #ff6b00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 900;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 52px auto;
+}
+
+.expertise-badge {
+  display: inline-block;
+  color: #0284c7;
+  background: #eff6ff;
+  border: 1px solid #bae6fd;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+.section-main-heading {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.25;
+  color: #0f172a;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.gradient-underline {
+  width: 84px;
+  height: 4px;
+  background: linear-gradient(90deg, #0284c7 0%, #7e22ce 35%, #de3f78 70%, #ff6b00 100%);
+  margin: 14px auto 0 auto;
+  border-radius: 4px;
+}
+
+.section-main-sub {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0 auto;
+}
+
+.courses-section {
+  padding: 68px 0;
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   2. Hero Section (White Background Theme matching Logo Colors)
+   ========================================================================== */
+.courses-hero-section {
+  padding: 20px 0 50px 0;
+  background-color: #ffffff;
+}
+
+.courses-hero-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 64px 48px;
+  text-align: center;
+  color: #0f172a;
+  box-shadow: 0 16px 45px rgba(2, 132, 199, 0.08), 0 4px 20px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top Accent Line with Logo Gradient */
+.courses-hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0284c7 0%, #7e22ce 35%, #de3f78 70%, #ff6b00 100%);
+}
+
+.hero-pill-badge {
+  display: inline-block;
+  background: #fff7ed;
+  color: #ff6b00;
+  border: 1.5px solid #ffedd5;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 8px 26px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 10px rgba(255, 107, 0, 0.12);
+}
+
+.courses-hero-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.25;
+  color: #0f172a;
+  margin-bottom: 22px;
+  letter-spacing: -0.02em;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.courses-hero-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 38px;
+  font-weight: 600;
+}
+
+.courses-hero-subtitle strong {
+  color: #ff6b00;
+  font-weight: 900;
+}
+
+.courses-hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Primary Enroll Button with Click On Media Logo Gradient */
+.btn-courses-enroll {
+  background: linear-gradient(135deg, #ff6b00 0%, #de3f78 50%, #7e22ce 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 16px 38px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 10px 28px rgba(255, 107, 0, 0.38);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-courses-enroll:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(255, 107, 0, 0.55);
+  background: linear-gradient(135deg, #ea580c 0%, #c026d3 50%, #6b21a8 100%);
+}
+
+/* Secondary Curriculum Button with Logo Blue border */
+.btn-courses-curriculum {
+  background: #ffffff;
+  color: #0284c7;
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 15px 36px;
+  border-radius: 50px;
+  border: 2px solid #0284c7;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.12);
+}
+
+.btn-courses-curriculum:hover {
+  transform: translateY(-2px);
+  background: #0284c7;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.3);
+}
+
+/* ==========================================================================
+   3. Key Stats Counter Bar (White Background with Logo Accent Colors)
+   ========================================================================== */
+.courses-stats-section {
+  padding: 20px 0 44px 0;
+  background-color: #ffffff;
+}
+
+.courses-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 34px 20px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: #0284c7;
+  box-shadow: 0 14px 30px rgba(2, 132, 199, 0.12);
+}
+
+.stat-number {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 36%, #de3f78 68%, #ff6b00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.stat-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* ==========================================================================
+   4. Complete Curriculum Section (White Cards with Logo Theme Borders)
+   ========================================================================== */
+.curriculum-section {
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.curriculum-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.curriculum-card {
+  border-radius: 24px;
+  padding: 40px 36px;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Foundation Card - Click On Media Blue Accent */
+.foundation-card {
+  border: 2px solid #0284c7;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08);
+}
+
+.foundation-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2, 132, 199, 0.16);
+}
+
+.foundation-card .curriculum-card-header h3 {
+  color: #0284c7;
+  border-bottom: 2px solid #e0f2fe;
+}
+
+.foundation-card .bullet-check {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+/* Advanced MERN Card - Click On Media Orange Accent */
+.mern-card {
+  border: 2px solid #ff6b00;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.08);
+}
+
+.mern-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(255, 107, 0, 0.16);
+}
+
+.mern-card .curriculum-card-header h3 {
+  color: #ff6b00;
+  border-bottom: 2px solid #ffedd5;
+}
+
+.mern-card .bullet-check {
+  background: #ffedd5;
+  color: #ff6b00;
+}
+
+.curriculum-card-header h3 {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.7rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+}
+
+.curriculum-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.curriculum-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+.bullet-check {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.88rem;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.syllabus-action-wrap {
+  text-align: center;
+}
+
+.btn-download-syllabus {
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 50%, #ff6b00 100%);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding: 15px 38px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.3);
+}
+
+.btn-download-syllabus:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.4);
+}
+
+/* ==========================================================================
+   5. Technologies Mastered (White Tiles with Logo Colors)
+   ========================================================================== */
+.tech-section {
+  background-color: #ffffff;
+}
+
+.technologies-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.tech-tile {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 28px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tech-tile:hover {
+  transform: translateY(-6px);
+  border-color: #ff6b00;
+  box-shadow: 0 12px 28px rgba(255, 107, 0, 0.15);
+}
+
+.tech-emoji {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.tech-name {
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   6. What You Get (White Cards with Logo Theme Highlights)
+   ========================================================================== */
+.benefits-section {
+  background-color: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.benefit-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-top: 4px solid #ff6b00;
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.benefit-card:nth-child(2) { border-top-color: #0284c7; }
+.benefit-card:nth-child(3) { border-top-color: #7e22ce; }
+.benefit-card:nth-child(4) { border-top-color: #de3f78; }
+.benefit-card:nth-child(5) { border-top-color: #0284c7; }
+.benefit-card:nth-child(6) { border-top-color: #ff6b00; }
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(2, 132, 199, 0.12);
+  border-color: #0284c7;
+}
+
+.benefit-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #fff7ed;
+  color: #ff6b00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.benefit-card:nth-child(2) .benefit-icon-box,
+.benefit-card:nth-child(5) .benefit-icon-box {
+  background: #eff6ff;
+  color: #0284c7;
+}
+
+.benefit-card:nth-child(3) .benefit-icon-box {
+  background: #f5f3ff;
+  color: #7e22ce;
+}
+
+.benefit-card:nth-child(4) .benefit-icon-box {
+  background: #fdf2f8;
+  color: #de3f78;
+}
+
+.benefit-icon-box svg {
+  width: 30px;
+  height: 30px;
+}
+
+.benefit-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.benefit-desc {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* ==========================================================================
+   7. Enrollment Form Section (Clean White Background)
+   ========================================================================== */
+.enrollment-section {
+  background-color: #ffffff;
+  padding: 80px 0;
+  color: #0f172a;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.enrollment-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.enrollment-heading {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: clamp(2.1rem, 4vw, 2.7rem);
+  font-weight: 900;
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.enrollment-subheading {
+  font-size: 1.15rem;
+  text-align: center;
+  color: #475569;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.enrollment-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 26px;
+  padding: 48px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+  color: #0f172a;
+}
+
+.enrollment-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field-group.full-width {
+  grid-column: span 2;
+}
+
+.form-field-group label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.form-field-group input,
+.form-field-group select,
+.form-field-group textarea {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 1rem;
+  color: #0f172a;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+  box-sizing: border-box;
+}
+
+.form-field-group input:focus,
+.form-field-group select:focus,
+.form-field-group textarea:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: #ff6b00;
+  box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.15);
+}
+
+.form-submit-wrap {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.btn-submit-enrollment {
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 36%, #de3f78 68%, #ff6b00 100%);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.15rem;
+  padding: 16px 48px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 28px rgba(2, 132, 199, 0.35);
+  width: 100%;
+}
+
+.btn-submit-enrollment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(255, 107, 0, 0.45);
+}
+
+.guarantee-note {
+  font-size: 0.92rem;
+  color: #64748b;
+  margin-top: 14px;
+}
+
+.enrollment-success-state {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.success-icon-bubble {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.success-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #16a34a;
+  margin-bottom: 14px;
+}
+
+.success-desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto 28px auto;
+}
+
+/* ==========================================================================
+   8. Course Pricing (White Cards with Logo Theme Highlights)
+   ========================================================================== */
+.pricing-section {
+  background-color: #ffffff;
+}
+
+.course-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.pricing-tier-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 44px 32px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.pricing-tier-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+/* Popular Tier - Click On Media Orange / Logo Highlight */
+.pricing-tier-card.popular {
+  border: 2.5px solid #ff6b00;
+  box-shadow: 0 16px 40px rgba(255, 107, 0, 0.15);
+}
+
+.tier-badge-pill {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #eff6ff;
+  color: #0284c7;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  padding: 5px 20px;
+  border-radius: 50px;
+  border: 1px solid #bae6fd;
+}
+
+.pricing-tier-card.popular .tier-badge-pill {
+  background: linear-gradient(135deg, #ff6b00 0%, #de3f78 100%);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(255, 107, 0, 0.35);
+}
+
+.tier-name {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.tier-price-wrap {
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.price-val {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.pricing-tier-card.popular .price-val {
+  color: #ff6b00;
+}
+
+.tier-duration {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tier-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.tier-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.96rem;
+  color: #334155;
+  line-height: 1.5;
+}
+
+.tier-check {
+  color: #ff6b00;
+  font-weight: 900;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.btn-tier-enroll {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  font-family: inherit;
+}
+
+.standard-btn {
+  background: #ffffff;
+  color: #0284c7;
+  border: 2px solid #0284c7;
+}
+
+.standard-btn:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.popular-btn {
+  background: linear-gradient(135deg, #ff6b00 0%, #de3f78 50%, #7e22ce 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(255, 107, 0, 0.35);
+}
+
+.popular-btn:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c026d3 50%, #6b21a8 100%);
+  box-shadow: 0 12px 30px rgba(255, 107, 0, 0.5);
+}
+
+/* ==========================================================================
+   9. Admission Counselor Banner (White Card with Logo Orange Accents)
+   ========================================================================== */
+.counselor-banner-section {
+  padding: 20px 0 50px 0;
+  background-color: #ffffff;
+}
+
+.counselor-banner-card {
+  background: #ffffff;
+  border: 2px solid #ff6b00;
+  border-radius: 26px;
+  padding: 48px;
+  text-align: center;
+  color: #0f172a;
+  box-shadow: 0 16px 40px rgba(255, 107, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.counselor-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.counselor-subtitle {
+  font-size: 1.15rem;
+  color: #475569;
+  margin-bottom: 28px;
+}
+
+.counselor-actions-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn-counselor-phone {
+  background: #0284c7;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-counselor-phone:hover {
+  transform: translateY(-2px);
+  background: #0369a1;
+  box-shadow: 0 8px 24px rgba(2, 132, 199, 0.4);
+}
+
+.btn-counselor-whatsapp {
+  background: #22c55e;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 14px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35);
+  transition: all 0.2s ease;
+}
+
+.btn-counselor-whatsapp:hover {
+  transform: translateY(-2px);
+  background: #16a34a;
+}
+
+/* ==========================================================================
+   10. FAQs Section (White Accordion with Logo Colors)
+   ========================================================================== */
+.faq-section {
+  background-color: #ffffff;
+}
+
+.courses-faq-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.courses-faq-row {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.courses-faq-row.active {
+  border-color: #0284c7;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.08);
+}
+
+.courses-faq-btn {
+  width: 100%;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.courses-faq-q-text {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.4;
+  padding-right: 16px;
+  transition: color 0.2s ease;
+}
+
+.courses-faq-row.active .courses-faq-q-text {
+  color: #0284c7;
+}
+
+.courses-faq-icon {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0284c7;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #eff6ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.courses-faq-icon.open {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.courses-faq-content-pane {
+  padding: 0 24px 22px 24px;
+  animation: courseFadeIn 0.3s ease;
+}
+
+.courses-faq-a-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+@keyframes courseFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   11. Bottom CTA Banner (White Card with Logo Gradient Highlights)
+   ========================================================================== */
+.courses-cta-banner-section {
+  padding: 40px 0 20px 0;
+  background-color: #ffffff;
+}
+
+.courses-bottom-cta-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 26px;
+  padding: 56px 48px;
+  text-align: center;
+  color: #0f172a;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(2, 132, 199, 0.08);
+}
+
+.courses-bottom-cta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #0284c7 0%, #7e22ce 35%, #de3f78 70%, #ff6b00 100%);
+}
+
+.bottom-cta-title {
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #0f172a;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.bottom-cta-desc {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 780px;
+  margin: 0 auto 36px auto;
+}
+
+.bottom-cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .curriculum-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .technologies-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .courses-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .courses-hero-title {
+    font-size: 2.1rem;
+  }
+
+  .section-main-heading {
+    font-size: 1.85rem;
+  }
+
+  .technologies-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enrollment-card {
+    padding: 32px 20px;
+  }
+
+  .enrollment-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-group.full-width {
+    grid-column: span 1;
+  }
+
+  .courses-bottom-cta-card {
+    padding: 40px 24px;
+  }
+
+  .bottom-cta-title {
+    font-size: 1.8rem;
+  }
+}

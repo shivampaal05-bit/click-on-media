@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="seoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <filter id="seoGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="650" height="380" rx="16" fill="url(#seoGrad)"/>
+
+  <!-- Google Ranking #1 Snippet Card -->
+  <rect x="40" y="40" width="360" height="110" rx="10" fill="#ffffff" filter="url(#seoGlow)"/>
+  <circle cx="65" cy="65" r="10" fill="#ea4335"/>
+  <text x="65" y="69" font-family="Segoe UI, sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">G</text>
+  <text x="85" y="62" font-family="Segoe UI, sans-serif" font-size="10" fill="#64748b">https://client-brand.in › gorakhpur</text>
+  <text x="85" y="76" font-family="Segoe UI, sans-serif" font-size="11" font-weight="800" fill="#16a34a">#1 RANKING ON GOOGLE SEARCH</text>
+  <text x="50" y="104" font-family="Segoe UI, sans-serif" font-size="14" font-weight="800" fill="#1a0dab">Best Doctor &amp; Healthcare Center in Gorakhpur</text>
+  <text x="50" y="122" font-family="Segoe UI, sans-serif" font-size="10" fill="#4d5156">Top rated clinical care with 4.9★ stars and 800+ verified customer reviews...</text>
+
+  <!-- Soaring Traffic Growth Area & Line -->
+  <g transform="translate(40, 190)">
+    <!-- Axis Grid Lines -->
+    <line x1="0" y1="0" x2="560" y2="0" stroke="#065f46" stroke-dasharray="4,4"/>
+    <line x1="0" y1="45" x2="560" y2="45" stroke="#065f46" stroke-dasharray="4,4"/>
+    <line x1="0" y1="90" x2="560" y2="90" stroke="#065f46" stroke-dasharray="4,4"/>
+    <line x1="0" y1="135" x2="560" y2="135" stroke="#047857" stroke-width="1.5"/>
+
+    <!-- Shaded Growth Fill -->
+    <path d="M0 120 Q120 110 200 85 T380 40 T540 10 L540 135 L0 135 Z" fill="rgba(16, 185, 129, 0.15)"/>
+    <!-- Neon Glowing Line -->
+    <path d="M0 120 Q120 110 200 85 T380 40 T540 10" stroke="url(#arrowGrad)" stroke-width="4.5" fill="none" filter="url(#seoGlow)"/>
+
+    <!-- Rocket Point -->
+    <circle cx="540" cy="10" r="6" fill="#34d399" filter="url(#seoGlow)"/>
+    <!-- Growth Arrow -->
+    <path d="M525 10 L545 10 L540 -10 Z" fill="#34d399"/>
+  </g>
+
+  <!-- Metric Badges Floating -->
+  <rect x="430" y="40" width="170" height="65" rx="10" fill="rgba(0, 0, 0, 0.4)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="445" y="65" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#a7f3d0">ORGANIC TRAFFIC</text>
+  <text x="445" y="92" font-family="Segoe UI, sans-serif" font-size="22" font-weight="900" fill="#34d399">+380%</text>
+
+  <rect x="430" y="115" width="170" height="65" rx="10" fill="rgba(0, 0, 0, 0.4)" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="445" y="140" font-family="Segoe UI, sans-serif" font-size="10" font-weight="700" fill="#bae6fd">LOCAL MAP CALLS</text>
+  <text x="445" y="167" font-family="Segoe UI, sans-serif" font-size="22" font-weight="900" fill="#38bdf8">1,420/Mo</text>
+</svg>

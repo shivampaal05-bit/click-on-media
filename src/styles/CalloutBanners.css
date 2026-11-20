@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Callout Banners Styles - 100% Logo Colors (Navy, Orange, Blue)
+   ========================================================================== */
+
+.callout-section {
+  background-color: var(--bg-page);
+  padding: 20px 24px 85px;
+}
+
+.callout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.callout-card {
+  border-radius: 28px;
+  padding: 44px 40px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.callout-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 45, 98, 0.12);
+}
+
+.card-teal {
+  background: linear-gradient(135deg, #e6f2ff 0%, #dbeafe 100%);
+  border: 1.5px solid #bfdbfe;
+}
+
+.card-purple {
+  background: linear-gradient(135deg, #fff2eb 0%, #ffe4d6 100%);
+  border: 1.5px solid #fed7aa;
+}
+
+.callout-content {
+  max-width: 360px;
+  z-index: 2;
+}
+
+.callout-badge {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+.card-teal .callout-badge {
+  background: #bfdbfe;
+  color: var(--logo-blue);
+}
+
+.card-purple .callout-badge {
+  background: #fed7aa;
+  color: var(--logo-orange);
+}
+
+.callout-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--logo-navy);
+  line-height: 1.28;
+  margin-bottom: 12px;
+}
+
+.highlight-dark {
+  background: var(--gradient-logo-mix);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.highlight-purple {
+  background: var(--gradient-logo-mix);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.callout-desc {
+  font-size: 0.95rem;
+  color: var(--logo-navy-medium);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.btn-callout-action {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-dark-action {
+  background: var(--logo-navy);
+  color: #ffffff;
+}
+
+.btn-dark-action:hover {
+  background: var(--gradient-logo-mix);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 87, 241, 0.35);
+}
+
+.btn-purple-action {
+  background: var(--gradient-logo-mix);
+  color: #ffffff;
+}
+
+.btn-purple-action:hover {
+  background: var(--logo-navy);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 0, 0.35);
+}
+
+.callout-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-metric-pill {
+  background: #ffffff;
+  padding: 12px 20px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--logo-navy);
+  box-shadow: 0 10px 25px rgba(0, 45, 98, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid var(--border-subtle);
+  animation: floatUpDown 3s ease-in-out infinite alternate;
+}
+
+.dot.online {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.trend-arrow {
+  color: var(--logo-orange);
+}
+
+@keyframes floatUpDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+@media screen and (max-width: 992px) {
+  .callout-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .callout-card {
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .callout-title {
+    font-size: 1.38rem;
+  }
+  .floating-metric-pill {
+    align-self: flex-start;
+  }
+}

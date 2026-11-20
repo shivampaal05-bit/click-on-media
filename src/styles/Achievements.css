@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Achievements Section Styles
+   Matches the reference website's clean white stat badge layout
+   ========================================================================== */
+
+.achievements-section {
+  background-color: #ffffff;
+  color: #111827;
+  padding: 85px 24px 75px;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  text-align: center;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 56px;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+
+.stat-icon-wrapper {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  transform: scale(1.08);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.stat-icon-wrapper svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Badge colors matching YesMadam style soft circular tints */
+.badge-pink {
+  background: radial-gradient(circle, #fde2ec 0%, #fad2e1 100%);
+  color: #e11d48;
+}
+
+.badge-purple {
+  background: radial-gradient(circle, #ede9fe 0%, #ddd6fe 100%);
+  color: #7c3aed;
+}
+
+.badge-rose {
+  background: radial-gradient(circle, #ffe4e6 0%, #fecdd3 100%);
+  color: #f43f5e;
+}
+
+.badge-teal {
+  background: radial-gradient(circle, #e0f2fe 0%, #bae6fd 100%);
+  color: #0284c7;
+}
+
+.badge-amber {
+  background: radial-gradient(circle, #fef3c7 0%, #fde68a 100%);
+  color: #d97706;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: #64748b;
+  max-width: 170px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .achievements-section {
+    padding: 60px 18px 50px;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  .stat-card:last-child {
+    grid-column: span 2;
+  }
+
+  .stat-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 14px;
+  }
+
+  .stat-icon-wrapper svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .stat-number {
+    font-size: 1.9rem;
+  }
+
+  .stat-label {
+    font-size: 0.88rem;
+  }
+}

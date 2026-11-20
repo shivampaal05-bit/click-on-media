@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Testimonials Section Styles - 100% Logo Colors
+   ========================================================================== */
+
+.testimonials-section {
+  background-color: var(--bg-page);
+  padding: 95px 24px 105px;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.rating-overview-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  padding: 8px 22px;
+  border-radius: 9999px;
+  margin-top: 14px;
+  box-shadow: 0 4px 12px rgba(0, 45, 98, 0.06);
+}
+
+.star-icon {
+  color: var(--logo-orange);
+  font-size: 1.15rem;
+}
+
+.rating-score {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--logo-navy);
+}
+
+.rating-count {
+  font-size: 0.88rem;
+  color: var(--logo-navy-soft);
+  font-weight: 700;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.testimonial-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 45, 98, 0.05);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-accent);
+  box-shadow: 0 16px 32px rgba(0, 45, 98, 0.12);
+}
+
+.stars-row {
+  display: flex;
+  gap: 4px;
+  color: var(--logo-orange);
+  font-size: 1.25rem;
+  margin-bottom: 18px;
+}
+
+.testimonial-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--logo-navy-medium);
+  font-weight: 500;
+  margin-bottom: 28px;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.client-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-top: 1.5px solid var(--border-subtle);
+  padding-top: 20px;
+}
+
+.client-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--logo-orange);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.client-name {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: var(--logo-navy);
+  margin-bottom: 2px;
+}
+
+.client-role {
+  font-size: 0.82rem;
+  color: var(--logo-navy-soft);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,656 @@
+/* ==========================================================================
+   Click On Media - Services Section (WsCube Tech Mentorship Layout)
+   100% Logo Colors - Zero Black / Gray Text
+   Headings: Logo Deep Navy (#002d62)
+   Body: Logo Medium Navy (#0b3975)
+   Accents: Logo Growth Orange (#ff6b00) & Electric Blue (#0062cc)
+   ========================================================================== */
+
+.interactive-services-section {
+  background-color: var(--bg-page);
+  color: var(--text-body);
+  padding: 65px 24px 75px;
+  position: relative;
+  border-top: 1.5px solid var(--border-subtle);
+}
+
+.interactive-services-container {
+  width: 100%;
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header */
+.wscube-header-block {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 20px;
+}
+
+.wscube-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--logo-navy);
+  letter-spacing: -0.025em;
+  margin-bottom: 6px;
+}
+
+.wscube-sub-title {
+  font-size: 0.95rem;
+  color: var(--logo-navy-medium);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* -------------------------------------------------------------------------
+   1. Horizontal Tab Pills Row (Exact Dimensions: 1060px max-width)
+   ------------------------------------------------------------------------- */
+.wscube-tabs-wrapper {
+  max-width: 1060px;
+  margin: 0 auto 16px;
+  width: 100%;
+}
+
+.wscube-tabs-scroll-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wscube-tab-pill {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--logo-navy);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.05);
+  white-space: nowrap;
+}
+
+.wscube-tab-pill:hover {
+  border-color: var(--logo-blue);
+  color: var(--logo-blue);
+  background: #f0f9ff;
+  transform: translateY(-2px);
+}
+
+/* Active Tab Pill - Exact Logo Electric Blue matching active tab */
+.wscube-tab-pill.active {
+  background: var(--logo-blue);
+  border-color: var(--logo-blue);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  transform: translateY(-1px);
+}
+
+/* -------------------------------------------------------------------------
+   2. Content Card (Exact User Spec: 1060px Width x 500px Min-Height)
+   ------------------------------------------------------------------------- */
+.wscube-card-container,
+.course-card {
+  width: 100%;
+  max-width: 1060px;
+  min-height: 500px;
+  margin: auto auto 26px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.08);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 28px;
+  align-items: center;
+  box-sizing: border-box;
+  animation: wscubeCardFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wscubeCardFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Column: Visual Showcase Box fitting 500px min-height perfectly */
+.wscube-card-left {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 456px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.3s ease;
+  box-sizing: border-box;
+}
+
+.wscube-card-left.theme-teal {
+  background: linear-gradient(135deg, #e0f2fe 0%, #ecfdf5 100%);
+}
+
+.wscube-card-left.theme-blue {
+  background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%);
+}
+
+.wscube-card-left.theme-magenta {
+  background: linear-gradient(135deg, #fce7f3 0%, #fae8ff 100%);
+}
+
+.wscube-card-left.theme-orange {
+  background: linear-gradient(135deg, #ffedd5 0%, #fff7ed 100%);
+}
+
+.wscube-card-left.theme-rose {
+  background: linear-gradient(135deg, #ffe4e6 0%, #fff1f2 100%);
+}
+
+.wscube-card-left.theme-purple {
+  background: linear-gradient(135deg, #ede9fe 0%, #f5f3ff 100%);
+}
+
+.wscube-img-frame {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.1);
+}
+
+.wscube-main-video,
+.wscube-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  transition: transform 0.4s ease;
+}
+
+.wscube-card-left:hover .wscube-main-video,
+.wscube-card-left:hover .wscube-main-img {
+  transform: scale(1.02);
+}
+
+/* Right Column: Information & Deliverables */
+.wscube-card-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.wscube-badge-row {
+  margin-bottom: 6px;
+}
+
+.wscube-top-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(126, 34, 206, 0.08) 45%, rgba(255, 107, 0, 0.08) 100%);
+  border: 1px solid rgba(126, 34, 206, 0.25);
+  color: var(--logo-navy);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 12px;
+  border-radius: 9999px;
+}
+
+.wscube-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.48rem;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  background: var(--gradient-logo-mix);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.wscube-card-desc {
+  font-size: 0.88rem;
+  color: var(--logo-navy-medium);
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+/* Features Pills Row */
+.wscube-features-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.wscube-feature-tag {
+  background: #f0f9ff;
+  border: 1px solid var(--border-subtle);
+  color: var(--logo-navy);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.wscube-feature-tag:hover {
+  border-color: var(--logo-orange);
+  color: var(--logo-blue);
+  background: #ffffff;
+}
+
+/* WsCube "Covered Projects" style Deliverables Strip */
+.wscube-covered-section {
+  margin-bottom: 12px;
+}
+
+.wscube-covered-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.wscube-covered-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+.wscube-covered-title {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--logo-navy-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.wscube-deliverables-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 8px;
+}
+
+.wscube-deliverable-chip {
+  background: #f8fafc;
+  border: 1px solid var(--border-subtle);
+  color: var(--logo-navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease;
+}
+
+.wscube-deliverable-chip:hover {
+  background: #eff6ff;
+  border-color: var(--logo-blue);
+  color: var(--logo-blue);
+}
+
+.chip-check {
+  color: var(--logo-orange);
+  font-weight: 900;
+  font-size: 0.78rem;
+}
+
+/* Two-Unit Stat Box */
+.wscube-stats-box {
+  background: #f8fafc;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.wscube-stat-unit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wscube-stat-icon {
+  font-size: 1.2rem;
+}
+
+.wscube-stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-unit-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--logo-navy-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-unit-val {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--logo-navy);
+}
+
+.stat-unit-val.text-orange {
+  background: var(--gradient-logo-mix);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.wscube-stat-divider {
+  width: 1px;
+  height: 28px;
+  background: var(--border-subtle);
+}
+
+/* Bottom Actions Row */
+.wscube-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wscube-btn-primary {
+  background: var(--gradient-logo-mix);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 9px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.wscube-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+  filter: brightness(1.08);
+}
+
+.wscube-btn-secondary {
+  background: #ffffff;
+  border: 1.5px solid var(--border-subtle);
+  color: var(--logo-navy);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.88rem;
+  padding: 8px 18px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.wscube-btn-secondary:hover {
+  border-color: var(--logo-blue);
+  color: var(--logo-blue);
+  background: #f0f9ff;
+  transform: translateY(-2px);
+}
+
+/* -------------------------------------------------------------------------
+   3. Personal Camera Shoot Strip
+   ------------------------------------------------------------------------- */
+.camera-shoot-strip {
+  background: #ffffff;
+  border: 1.5px solid #fed7aa;
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.camera-strip-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.camera-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--logo-orange);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.camera-icon-badge svg {
+  width: 24px;
+  height: 24px;
+}
+
+.camera-strip-title-wrap h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--logo-navy);
+  margin-bottom: 2px;
+}
+
+.camera-strip-title-wrap p {
+  font-size: 0.92rem;
+  color: var(--logo-navy-medium);
+  font-weight: 500;
+}
+
+.camera-strip-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.camera-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 6px 14px;
+  border-radius: 9999px;
+}
+
+.btn-camera-book {
+  background: var(--gradient-logo-mix);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 0.94rem;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-camera-book:hover {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+}
+
+/* -------------------------------------------------------------------------
+   4. Banner Contact Strip
+   ------------------------------------------------------------------------- */
+.banner-contact-bar {
+  background: var(--gradient-logo-navy);
+  border-radius: 16px;
+  padding: 22px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: #ffffff;
+  border: 1.5px solid rgba(141, 193, 245, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 45, 98, 0.2);
+}
+
+.contact-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s ease;
+}
+
+.contact-bar-item:hover {
+  transform: translateY(-2px);
+}
+
+.c-bar-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.c-bar-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.phone-icon {
+  background: var(--logo-orange);
+  color: #ffffff;
+}
+
+.email-icon {
+  background: var(--logo-blue);
+  color: #ffffff;
+}
+
+.map-icon {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.c-bar-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #8dc1f5;
+}
+
+.c-val {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.address-item .c-val {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #d0e2f5;
+  max-width: 380px;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+  .wscube-card-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 30px 28px;
+  }
+
+  .wscube-card-left {
+    height: 320px;
+  }
+
+  .camera-shoot-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .banner-contact-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .interactive-services-section {
+    padding: 60px 16px 70px;
+  }
+
+  .wscube-tab-pill {
+    padding: 10px 18px;
+    font-size: 0.88rem;
+  }
+
+  .wscube-card-container {
+    padding: 24px 18px;
+  }
+
+  .wscube-points-list {
+    grid-template-columns: 1fr;
+  }
+
+  .wscube-stats-box {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .wscube-stat-divider {
+    display: none;
+  }
+
+  .wscube-actions-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .wscube-btn-primary,
+  .wscube-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
