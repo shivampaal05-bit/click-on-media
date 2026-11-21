@@ -16,9 +16,9 @@ export default function Hero({ onOpenContact, onNavigate }) {
   // Typewriter Progress States
   const [typedHeadline, setTypedHeadline] = useState("");
   const [typedDesc, setTypedDesc] = useState("");
-  const [showBadge, setShowBadge] = useState(false);
-  const [showPillars, setShowPillars] = useState(false);
-  const [showActions, setShowActions] = useState(false);
+  const [showBadge, setShowBadge] = useState(true);
+  const [showPillars, setShowPillars] = useState(true);
+  const [showActions, setShowActions] = useState(true);
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
   // Guarantee autoplay under strict browser media policies
