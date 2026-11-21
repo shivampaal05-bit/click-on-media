@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Hero Section Styles - Complete Layout Kept 100% Intact
-   All Elements Calibrated to Official Click On Media Logo Colors
+   Hero Section Styles - Click On Media
+   4K 3D Spatial Video Background + Centered Transparent Typewriter Agency Text
    ========================================================================== */
 
 .hero-section {
@@ -9,15 +9,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* Always pins content and ticker to bottom */
+  justify-content: space-between;
   overflow: hidden;
-  padding-top: 80px; /* Space for Fixed Navbar */
+  padding-top: 85px; /* Fixed Navbar Clearance */
   box-sizing: border-box;
   background: #000c1e;
+  perspective: 1200px;
 }
 
 /* -------------------------------------------------------------------------
-   1. Fullscreen Background Video - 4K High Clarity & 3D Spatial Depth
+   1. 3D Spatial Video Background - 4K Video with Interactive Mouse Depth
    ------------------------------------------------------------------------- */
 .video-background-wrapper {
   position: absolute;
@@ -27,8 +28,9 @@
   height: 100%;
   z-index: 1;
   overflow: hidden;
-  perspective: 1200px;
-  box-shadow: inset 0 0 100px rgba(2, 132, 199, 0.2), inset 0 0 60px rgba(0, 0, 0, 0.7);
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+  will-change: transform;
 }
 
 .hero-video {
@@ -42,108 +44,99 @@
   filter: contrast(1.03) saturate(1.05) brightness(1.02);
   -webkit-filter: contrast(1.03) saturate(1.05) brightness(1.02);
   image-rendering: -webkit-optimize-contrast;
-  transform: scale(1.01);
+  transform: scale(1.02);
   transition: filter 0.4s ease;
 }
 
-@keyframes hero3dMotion {
-  0% {
-    transform: scale(1.04) translate3d(0, 0, 0) rotateX(0deg);
-  }
-  50% {
-    transform: scale(1.07) translate3d(-10px, -6px, 20px) rotateX(0.8deg);
-  }
-  100% {
-    transform: scale(1.05) translate3d(8px, 4px, 8px) rotateX(-0.5deg);
-  }
-}
-
-/* Clean Minimalist Overlay: Only ultra-subtle top & bottom blend, video stays 100% bright & crystal clear */
+/* 3D Cinematic Atmosphere: Ultra-clear center so office & employees are 100% visible */
 .video-overlay {
   position: absolute;
   inset: 0;
   background: 
-    /* Top subtle shadow for navbar blend */
-    linear-gradient(180deg, rgba(0, 10, 26, 0.45) 0%, transparent 12%),
-    /* Bottom subtle shadow for ticker blend */
-    linear-gradient(0deg, rgba(0, 10, 26, 0.6) 0%, transparent 10%);
+    radial-gradient(circle at center, rgba(0, 0, 0, 0.12) 0%, rgba(0, 10, 26, 0.45) 80%, rgba(0, 6, 18, 0.72) 100%),
+    linear-gradient(180deg, rgba(0, 10, 26, 0.5) 0%, transparent 14%, transparent 86%, rgba(0, 10, 26, 0.65) 100%);
   pointer-events: none;
+  z-index: 2;
+}
+
+.hero-3d-ambient-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  background: radial-gradient(ellipse at 50% 50%, rgba(2, 132, 199, 0.12) 0%, rgba(126, 34, 206, 0.05) 50%, transparent 75%);
+  mix-blend-mode: screen;
 }
 
 /* -------------------------------------------------------------------------
-   2. Hero Content Container (Positioned to the Side as a 3D Glass Card)
+   2. Centered Transparent Content (NO Solid Background Card - 100% Transparent)
    ------------------------------------------------------------------------- */
-.hero-container {
+.hero-center-wrapper {
   position: relative;
   z-index: 10;
+  margin: auto;
   width: 100%;
-  max-width: var(--container-max, 1440px);
-  margin-top: auto;
-  margin-bottom: 35px;
-  padding: 20px 48px;
+  max-width: 1100px;
+  padding: 30px 24px 20px 24px;
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  transform-style: preserve-3d;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
-.hero-side-card {
-  max-width: 580px;
+.hero-transparent-content {
   width: 100%;
-  background: rgba(0, 12, 28, 0.68);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  border-left: 4px solid #0284c7;
-  border-radius: 26px;
-  padding: 36px 40px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(2, 132, 199, 0.18);
+  background: transparent !important;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: 16px;
-  animation: fadeInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hero-side-card:hover {
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.75), 0 0 45px rgba(2, 132, 199, 0.3);
-  border-color: rgba(56, 189, 248, 0.5);
-}
-
-.hero-side-desc {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-  margin: 4px 0 10px 0;
-}
-
-/* Eyebrow Badge in Logo Cyan/Blue with Pulsing Orange Dot */
-.hero-eyebrow-badge {
+/* Eyebrow Badge: ALL-IN-ONE DIGITAL SOLUTIONS AGENCY */
+.hero-center-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   background: rgba(2, 132, 199, 0.16);
-  border: 1px solid rgba(56, 189, 248, 0.45);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 7px 18px;
+  border: 1.5px solid rgba(56, 189, 248, 0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 8px 24px;
   border-radius: 9999px;
   font-family: var(--font-heading);
-  font-size: 0.84rem;
-  font-weight: 700;
+  font-size: 0.88rem;
+  font-weight: 800;
   color: #38bdf8;
-  letter-spacing: 0.04em;
-  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.2);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 22px rgba(2, 132, 199, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.badge-dot {
+.hero-center-badge.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.badge-sparkle {
+  color: #ff6b00;
+  font-size: 0.95rem;
+  filter: drop-shadow(0 0 8px #ff6b00);
+}
+
+.badge-pulse-dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #ff6b00;
-  box-shadow: 0 0 10px #ff6b00;
+  box-shadow: 0 0 12px #ff6b00;
   animation: pulseDot 2s infinite ease-in-out;
 }
 
@@ -152,148 +145,266 @@
   50% { transform: scale(1.4); opacity: 0.7; }
 }
 
-/* Grand Hero Title */
-.hero-title {
+/* Grand Central Title with Typewriter Effect */
+.hero-center-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-size: clamp(2rem, 3.8vw, 3.35rem);
   font-weight: 900;
-  line-height: 1.22;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
   color: #ffffff;
   margin: 0;
-  text-align: left;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
+  max-width: 960px;
+  min-height: 2.4em;
+  text-align: center;
+  /* Luminous Drop-Shadow: 100% Crisp Legibility over Video without Background Block */
+  text-shadow: 
+    0 4px 22px rgba(0, 0, 0, 0.95), 
+    0 1px 4px rgba(0, 0, 0, 1), 
+    0 0 45px rgba(2, 132, 199, 0.35);
 }
 
-.hero-title-main {
-  display: block;
-  margin-bottom: 8px;
-  text-align: left;
-}
-
-.hero-title-sub {
-  display: block;
-  color: #ffffff;
-  font-weight: 900;
-  text-align: left;
-}
-
-/* Exact Colors matching "Complete Digital Solutions for Your Business" (#38bdf8 Electric Sky Cyan) */
-.highlight-text-growth,
-.highlight-text-media {
-  color: #38bdf8;
-  background: linear-gradient(120deg, #7dd3fc 0%, #38bdf8 50%, #0284c7 100%);
+/* Click On Media Vibrant Signature Gradient */
+.hero-gradient-text {
+  background: linear-gradient(115deg, #38bdf8 0%, #c084fc 48%, #ff7a00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
+  display: inline;
   font-weight: 900;
-  filter: drop-shadow(0 2px 14px rgba(56, 189, 248, 0.4));
+  filter: drop-shadow(0 2px 14px rgba(56, 189, 248, 0.5));
 }
 
-/* Quick Services Strip (8 Core Solution Pills) */
-.hero-services-pills {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  padding: 4px 0;
+/* Glowing Pulsing Typewriter Cursor */
+.typewriter-cursor {
+  display: inline-block;
+  font-weight: 300;
+  color: #38bdf8;
+  margin-left: 2px;
+  animation: blinkCursor 0.75s infinite ease-in-out;
+  vertical-align: baseline;
+  text-shadow: 0 0 12px #38bdf8;
 }
 
-.services-pill-label {
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 800;
+.desc-cursor {
+  font-size: 1.1rem;
   color: #ff6b00;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-right: 4px;
+  text-shadow: 0 0 10px #ff6b00;
 }
 
-.hero-service-chip {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #ffffff;
-  background: rgba(2, 132, 199, 0.2);
-  border: 1px solid rgba(186, 230, 253, 0.35);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 5px 13px;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  white-space: nowrap;
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.hero-service-chip:hover {
-  background: linear-gradient(135deg, #0284c7 0%, #ff6b00 100%);
-  border-color: #ffffff;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.4);
-}
-
-/* Action CTA Buttons */
-.hero-actions {
+/* Pillars: Marketing • Technology • Creativity */
+.hero-pillars-row {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 14px;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 6px;
+  margin-top: 2px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Solid White Pill Button with Navy Text, Hover to Logo Orange */
-.btn-pill-solid {
-  display: inline-flex;
+.hero-pillars-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pillar-item {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pillar-item:hover {
+  transform: translateY(-2px);
+}
+
+.pillar-marketing {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  box-shadow: 0 3px 14px rgba(56, 189, 248, 0.22);
+}
+
+.pillar-tech {
+  color: #c084fc;
+  background: rgba(192, 132, 252, 0.14);
+  border: 1px solid rgba(192, 132, 252, 0.45);
+  box-shadow: 0 3px 14px rgba(192, 132, 252, 0.22);
+}
+
+.pillar-creativity {
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.14);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  box-shadow: 0 3px 14px rgba(251, 146, 60, 0.22);
+}
+
+.pillar-bullet {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+}
+
+/* Center Description Paragraph */
+.hero-center-description {
+  font-family: var(--font-body);
+  font-size: clamp(0.96rem, 1.25vw, 1.12rem);
+  line-height: 1.68;
+  color: #f8fafc;
+  font-weight: 500;
+  max-width: 860px;
+  min-height: 3.2em;
+  margin: 4px 0 6px 0;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95), 0 1px 3px rgba(0, 0, 0, 1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-center-description.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Action CTA Buttons (Centered, Transparent & Glowing) */
+.hero-center-actions {
+  display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  color: #001e47;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-center-actions.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Primary Button: Get a Free Consultation */
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0284c7 0%, #7e22ce 50%, #ff6b00 100%);
+  color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1rem;
-  padding: 13px 32px;
+  font-size: 1.05rem;
+  padding: 15px 36px;
   border-radius: 9999px;
-  text-decoration: none;
-  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.25), 0 6px 14px rgba(0, 16, 38, 0.3);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 32px rgba(2, 132, 199, 0.4), 0 0 22px rgba(255, 107, 0, 0.3);
   cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-pill-solid:hover {
-  background-color: #ff6b00;
-  color: #ffffff;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(255, 106, 0, 0.45);
+.btn-hero-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 16px 42px rgba(2, 132, 199, 0.55), 0 0 32px rgba(255, 107, 0, 0.5);
+  border-color: #ffffff;
 }
 
-/* Frosted Glass Pill Button with Logo Cyan Border, Hover to Logo Orange */
-.btn-pill-glass {
+.btn-hero-primary .btn-arrow {
+  transition: transform 0.25s ease;
+  font-size: 1.15rem;
+}
+
+.btn-hero-primary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Secondary Button: View Our Services (Ultra-clean transparent glass) */
+.btn-hero-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid rgba(56, 189, 248, 0.45);
+  border: 1.5px solid rgba(56, 189, 248, 0.5);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1rem;
-  padding: 12px 30px;
+  font-size: 1.05rem;
+  padding: 14px 34px;
   border-radius: 9999px;
-  text-decoration: none;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-.btn-pill-glass:hover {
-  background: rgba(255, 255, 255, 0.22);
+.btn-hero-secondary:hover {
+  background: rgba(56, 189, 248, 0.18);
   border-color: #ff6b00;
   color: #ffffff;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 22px rgba(56, 189, 248, 0.35);
+}
+
+/* Bottom Ribbon: GROW YOUR BRAND • REACH MORE CUSTOMERS • AUTOMATE YOUR BUSINESS */
+.hero-growth-ribbon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  padding: 9px 26px;
+  border-radius: 9999px;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-growth-ribbon.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ribbon-text {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #f1f5f9;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.ribbon-dot {
+  color: #ff6b00;
+  font-size: 0.95rem;
+}
+
+.ribbon-sparkle {
+  color: #38bdf8;
+  font-size: 0.88rem;
+  filter: drop-shadow(0 0 6px #38bdf8);
 }
 
 /* -------------------------------------------------------------------------
@@ -305,7 +416,7 @@
   z-index: 15;
   width: 100%;
   overflow: hidden;
-  padding: 15px 0;
+  padding: 14px 0;
   background: rgba(2, 10, 25, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -333,45 +444,37 @@
 /* Crisp Clean White Ticker Items */
 .ticker-item {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.12rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   color: #ffffff;
   display: inline-block;
-  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* Click On Media Logo Colors Gradient Highlight */
 .ticker-highlight {
-  background: linear-gradient(135deg, #38bdf8 0%, #a855f7 38%, #de3f78 72%, #ff6b00 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #38bdf8;
   font-weight: 900;
-  display: inline-block;
-  filter: drop-shadow(0 2px 8px rgba(222, 63, 120, 0.35));
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.4));
 }
 
 .ticker-brand {
-  font-weight: 900;
-  letter-spacing: 0.07em;
   color: #ffffff;
 }
 
 .ticker-brand .ticker-highlight {
-  background: linear-gradient(135deg, #ff6b00 0%, #de3f78 50%, #7e22ce 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Logo Orange Star Burst Separator with Glow */
-.ticker-burst {
   color: #ff6b00;
-  font-size: 1.25rem;
-  text-shadow: 0 0 12px rgba(255, 107, 0, 0.85);
-  animation: spinBurst 8s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(255, 107, 0, 0.6));
 }
 
-@keyframes spinBurst {
+.ticker-burst {
+  font-size: 1.1rem;
+  color: #ff6b00;
+  animation: burstSpin 8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes burstSpin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
@@ -382,74 +485,94 @@
 }
 
 /* -------------------------------------------------------------------------
-   4. Scroll Indicator (Mouse Wheel Bounce)
+   4. Audio Toggle Button & Scroll Down Indicator
    ------------------------------------------------------------------------- */
+.audio-toggle-btn {
+  position: absolute;
+  top: 100px;
+  right: 32px;
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 12, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.audio-toggle-btn:hover {
+  background: rgba(2, 132, 199, 0.4);
+  border-color: #ff6b00;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+}
+
 .scroll-indicator {
   position: absolute;
-  bottom: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 12;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  bottom: 80px;
+  right: 36px;
+  z-index: 20;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease;
 }
 
 .scroll-indicator:hover {
-  opacity: 1;
+  transform: translateY(3px);
 }
 
 .mouse-icon {
-  width: 22px;
-  height: 36px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 12px;
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(56, 189, 248, 0.6);
+  border-radius: 14px;
   display: flex;
   justify-content: center;
   padding-top: 6px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
 }
 
 .wheel {
-  width: 3.5px;
-  height: 7px;
-  background: #38bdf8;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+  width: 4px;
+  height: 8px;
+  background-color: #ff6b00;
   border-radius: 2px;
-  animation: scrollBounce 1.6s infinite ease-in-out;
+  animation: mouseWheel 1.8s infinite ease-in-out;
+  box-shadow: 0 0 8px #ff6b00;
 }
 
-@keyframes scrollBounce {
+@keyframes mouseWheel {
   0% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(8px); opacity: 0.4; }
-  100% { transform: translateY(0); opacity: 1; }
-}
-
-/* Keyframes */
-@keyframes fadeInLeft {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+  60% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
 }
 
 /* -------------------------------------------------------------------------
-   5. Responsive Breakpoints
+   5. Responsive Media Queries
    ------------------------------------------------------------------------- */
-@media screen and (max-width: 1024px) {
-  .hero-container {
-    padding: 30px 32px 20px 32px;
+@media screen and (max-width: 992px) {
+  .hero-center-wrapper {
+    padding: 20px 20px;
   }
 
-  .hero-title {
-    font-size: clamp(2rem, 4.4vw, 3.2rem);
+  .hero-center-title {
+    font-size: clamp(1.85rem, 5.2vw, 2.75rem);
   }
 
-  .hero-title-main {
-    margin-bottom: 8px;
-  }
-
-  .ticker-solid,
-  .ticker-outline {
-    font-size: 1rem;
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 13px 28px;
+    font-size: 0.98rem;
   }
 }
 
@@ -458,57 +581,67 @@
     padding-top: 75px;
   }
 
-  .hero-container {
-    padding: 20px 20px 16px 20px;
+  .hero-center-wrapper {
+    padding: 16px 16px 24px 16px;
   }
 
-  .hero-content {
-    gap: 16px;
-  }
-
-  .hero-eyebrow-badge {
+  .hero-center-badge {
     font-size: 0.78rem;
-    padding: 6px 14px;
+    padding: 6px 16px;
   }
 
-  .hero-title {
-    font-size: clamp(1.75rem, 6.8vw, 2.3rem);
-    line-height: 1.2;
+  .hero-center-title {
+    font-size: clamp(1.65rem, 6.4vw, 2.2rem);
+    min-height: auto;
   }
 
-  .hero-title-main {
-    margin-bottom: 6px;
+  .hero-pillars-row {
+    gap: 8px;
   }
 
-  .hero-services-pills {
-    display: none; /* Hide dense chips on small screens to maintain clean layout */
+  .pillar-item {
+    font-size: 0.8rem;
+    padding: 5px 12px;
   }
 
-  .hero-actions {
+  .hero-center-description {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    min-height: auto;
+  }
+
+  .hero-center-actions {
     flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
     width: 100%;
+    gap: 12px;
   }
 
-  .btn-pill-solid,
-  .btn-pill-glass {
+  .btn-hero-primary,
+  .btn-hero-secondary {
     width: 100%;
-    text-align: center;
-    padding: 13px 20px;
-    font-size: 0.96rem;
+    justify-content: center;
+    padding: 14px 20px;
+    font-size: 0.98rem;
+  }
+
+  .hero-growth-ribbon {
+    padding: 8px 16px;
+    font-size: 0.78rem;
+    gap: 8px;
+  }
+
+  .ribbon-text {
+    font-size: 0.76rem;
   }
 
   .scroll-indicator {
     display: none;
   }
 
-  .schbang-ticker-bar {
-    padding: 10px 0;
-  }
-
-  .ticker-solid,
-  .ticker-outline {
-    font-size: 0.92rem;
+  .audio-toggle-btn {
+    top: 85px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
   }
 }

@@ -301,7 +301,7 @@ export default function App() {
       ) : (
         <main>
           {/* Fullscreen Video Hero */}
-          <Hero onOpenContact={handleOpenContact} />
+          <Hero onOpenContact={handleOpenContact} onNavigate={navigateTo} />
 
           {/* 1. Interactive Core Services (Directly Below Hero Section) */}
           <InteractiveServices onOpenContact={handleOpenContact} />
