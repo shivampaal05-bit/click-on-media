@@ -40,11 +40,9 @@
   object-fit: cover;
   object-position: center center;
   display: block;
-  /* 4K Ultra HD Vivid Clarity - Razor Sharp & Bright */
-  filter: contrast(1.06) brightness(1.03) saturate(1.05);
-  -webkit-filter: contrast(1.06) brightness(1.03) saturate(1.05);
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  /* Crystal Clear 4K Clean Video Rendering */
+  filter: contrast(1.02) brightness(1.02) saturate(1.04);
+  -webkit-filter: contrast(1.02) brightness(1.02) saturate(1.04);
   transform: scale(1.01);
   transition: filter 0.4s ease;
 }
