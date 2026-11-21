@@ -163,126 +163,108 @@ export default function Navbar({ onOpenContact, onNavigate, currentPage = 'home'
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="nav-container">
-          {/* Brand Logo with Dynamic Rotating Suffix (.SEO, .Website, .Media, etc.) matching Schbang */}
-          <a href="#/" className="brand-logo" aria-label="Click On Media Home" onClick={handleLogoClick}>
-            <img 
-              src="./assets/logo-light.png" 
-              alt="Click On Media" 
-              className="logo-img"
-            />
-            <div className="brand-rotating-wrap">
-              <span className="brand-dot">.</span>
-              <span className="brand-rotating-text" key={domainIndex}>
-                {serviceNames[domainIndex]}
-              </span>
-            </div>
-          </a>
+      <div className="nav-container">
+        {/* Brand Logo with Dynamic Rotating Suffix (.SEO, .Website, .Media, etc.) matching Schbang */}
+        <a href="#/" className="brand-logo" aria-label="Click On Media Home" onClick={handleLogoClick}>
+          <img
+            src="./assets/logo-light.png"
+            alt="Click On Media"
+            className="logo-img"
+          />
+          <div className="brand-rotating-wrap">
+            <span className="brand-dot">.</span>
+            <span className="brand-rotating-text" key={domainIndex}>
+              {serviceNames[domainIndex]}
+            </span>
+          </div>
+        </a>
 
-          {/* Navigation Menu */}
-          <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-            <ul className="nav-list">
-              <li className="nav-item">
-                <button
-                  type="button"
-                  className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
-                  onClick={handleLogoClick}
+        {/* Navigation Menu */}
+        <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <ul className="nav-list">
+            <li className="nav-item">
+              <button
+                type="button"
+                className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
+                onClick={handleLogoClick}
+              >
+                Home
+              </button>
+            </li>
+            <li className="nav-item nav-item-dropdown" ref={dropdownRef}>
+              <button
+                type="button"
+                className={`services-dropdown-btn ${isServicesOpen ? 'active' : ''}`}
+                onClick={() => setIsServicesOpen(prev => !prev)}
+                aria-expanded={isServicesOpen}
+                aria-haspopup="true"
+              >
+                <span className="btn-text-wrap">Our Services</span>
+                <svg
+                  className={`dropdown-arrow ${isServicesOpen ? 'open' : ''}`}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  Home
-                </button>
-              </li>
-              <li className="nav-item nav-item-dropdown" ref={dropdownRef}>
-                <button
-                  type="button"
-                  className={`services-dropdown-btn ${isServicesOpen ? 'active' : ''}`}
-                  onClick={() => setIsServicesOpen(prev => !prev)}
-                  aria-expanded={isServicesOpen}
-                  aria-haspopup="true"
-                >
-                  <span className="btn-text-wrap">Our Services</span>
-                  <svg 
-                    className={`dropdown-arrow ${isServicesOpen ? 'open' : ''}`} 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2.5" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                    aria-hidden="true"
-                  >
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                  </svg>
-                </button>
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
 
-                {/* Dropdown Menu matching video */}
-                {isServicesOpen && (
-                  <div className="services-dropdown-menu">
-                    <ul className="dropdown-list">
-                      {dropdownServices.map((item, idx) => {
-                        if (item.isDivider) {
-                          return <li key={`div-${idx}`} className="dropdown-divider" role="separator" />;
-                        }
-                        const isCourses = item.serviceId === 'courses' || item.name === 'Courses';
-                        return (
-                          <li key={item.name} className={`dropdown-menu-item ${isCourses ? 'dropdown-item-courses' : ''}`}>
-                            <button
-                              type="button"
-                              className={`dropdown-menu-link ${isCourses ? 'dropdown-link-courses' : ''}`}
-                              onClick={() => handleServiceClick(item)}
-                            >
-                              <span className={`dropdown-item-text ${isCourses ? 'dropdown-text-courses' : ''}`}>{item.name}</span>
-                              <svg className={`dropdown-item-arrow ${isCourses ? 'dropdown-arrow-courses' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                              </svg>
-                            </button>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                )}
-              </li>
-              <li className="nav-item">
-                <button
-                  type="button"
-                  className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
-                  onClick={() => {
-                    closeMenu();
-                    if (onNavigate) {
-                      onNavigate('about');
-                    } else {
-                      window.location.hash = '#/about';
-                    }
-                  }}
-                >
-                  About Us
-                </button>
-              </li>
-              <li className="nav-item">
-                <a href="#reviews" className="nav-link" onClick={(e) => handleNavSection(e, '#reviews')}>Reviews</a>
-              </li>
-              <li className="nav-item">
-                <button
-                  type="button"
-                  className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
-                  onClick={() => {
-                    closeMenu();
-                    if (onNavigate) {
-                      onNavigate('contact');
-                    } else {
-                      window.location.hash = '#/contact';
-                    }
-                  }}
-                >
-                  Contact Us
-                </button>
-              </li>
-            </ul>
-
-            {/* Mobile Drawer CTA */}
-            <div className="mobile-cta-wrapper">
-              <button 
-                className="btn btn-mobile" 
+              {/* Dropdown Menu matching video */}
+              {isServicesOpen && (
+                <div className="services-dropdown-menu">
+                  <ul className="dropdown-list">
+                    {dropdownServices.map((item, idx) => {
+                      if (item.isDivider) {
+                        return <li key={`div-${idx}`} className="dropdown-divider" role="separator" />;
+                      }
+                      const isCourses = item.serviceId === 'courses' || item.name === 'Courses';
+                      return (
+                        <li key={item.name} className={`dropdown-menu-item ${isCourses ? 'dropdown-item-courses' : ''}`}>
+                          <button
+                            type="button"
+                            className={`dropdown-menu-link ${isCourses ? 'dropdown-link-courses' : ''}`}
+                            onClick={() => handleServiceClick(item)}
+                          >
+                            <span className={`dropdown-item-text ${isCourses ? 'dropdown-text-courses' : ''}`}>{item.name}</span>
+                            <svg className={`dropdown-item-arrow ${isCourses ? 'dropdown-arrow-courses' : ''}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                              <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+            </li>
+            <li className="nav-item">
+              <button
+                type="button"
+                className={`nav-link ${currentPage === 'about' ? 'active' : ''}`}
+                onClick={() => {
+                  closeMenu();
+                  if (onNavigate) {
+                    onNavigate('about');
+                  } else {
+                    window.location.hash = '#/about';
+                  }
+                }}
+              >
+                About Us
+              </button>
+            </li>
+            <li className="nav-item">
+              <a href="#reviews" className="nav-link" onClick={(e) => handleNavSection(e, '#reviews')}>Reviews</a>
+            </li>
+            <li className="nav-item">
+              <button
+                type="button"
+                className={`nav-link ${currentPage === 'contact' ? 'active' : ''}`}
                 onClick={() => {
                   closeMenu();
                   if (onNavigate) {
@@ -292,25 +274,45 @@ export default function Navbar({ onOpenContact, onNavigate, currentPage = 'home'
                   }
                 }}
               >
-                Contact Us →
+                Contact Us
               </button>
-            </div>
-          </nav>
+            </li>
+          </ul>
 
-          {/* Right Action CTA & Mobile Hamburger */}
-          <div className="nav-actions">
-            <button 
-              className={`hamburger-btn ${isMenuOpen ? 'active' : ''}`}
-              onClick={toggleMenu}
-              aria-label="Toggle navigation menu"
-              aria-expanded={isMenuOpen}
+          {/* Mobile Drawer CTA */}
+          <div className="mobile-cta-wrapper">
+            <button
+              className="btn btn-mobile"
+              onClick={() => {
+                closeMenu();
+                if (onNavigate) {
+                  onNavigate('contact');
+                } else {
+                  window.location.hash = '#/contact';
+                }
+              }}
             >
-              <span className="bar"></span>
-              <span className="bar"></span>
-              <span className="bar"></span>
+              Contact Us →
             </button>
           </div>
+        </nav>
+
+        {/* Right Action CTA & Mobile Hamburger */}
+        <div className="nav-actions">
+          <button
+            className={`hamburger-btn ${isMenuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
         </div>
-      </header>
+      </div>
+    </header>
   );
 }
+
+
