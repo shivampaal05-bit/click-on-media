@@ -1,11 +1,12 @@
 /* ==========================================================================
    Contact / Free Consultation Modal Styles - Click On Media
+   Comprehensive 2-Column Grand Modal (Brand Flyer & Booking Form)
    ========================================================================== */
 
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 10, 26, 0.85);
+  background: rgba(1, 10, 24, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 9999;
@@ -17,61 +18,515 @@
   animation: modalFadeIn 0.25s ease forwards;
 }
 
-.modal-box.modal-consultation {
-  background: linear-gradient(145deg, #021226 0%, #000c1e 100%);
+/* Grand 2-Column Consultation Modal Box */
+.modal-box.modal-consultation-grand {
+  background: linear-gradient(145deg, #021024 0%, #061633 50%, #020b18 100%);
   border: 1.5px solid rgba(56, 189, 248, 0.35);
   border-radius: 26px;
   width: 100%;
-  max-width: 580px;
-  padding: 34px 32px;
+  max-width: 980px;
+  padding: 32px 30px;
   box-shadow: 
-    0 25px 70px rgba(0, 0, 0, 0.8),
-    0 0 45px rgba(2, 132, 199, 0.25);
+    0 30px 80px rgba(0, 0, 0, 0.88),
+    0 0 50px rgba(2, 132, 199, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   position: relative;
   animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   max-height: 92vh;
   overflow-y: auto;
 }
 
-/* Custom Scrollbar for Modal */
-.modal-box.modal-consultation::-webkit-scrollbar {
+/* Custom Scrollbar for Modal Box */
+.modal-box.modal-consultation-grand::-webkit-scrollbar {
   width: 6px;
 }
-.modal-box.modal-consultation::-webkit-scrollbar-thumb {
-  background: rgba(56, 189, 248, 0.3);
+.modal-box.modal-consultation-grand::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+.modal-box.modal-consultation-grand::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.35);
   border-radius: 3px;
 }
+.modal-box.modal-consultation-grand::-webkit-scrollbar-thumb:hover {
+  background: #ff6b00;
+}
 
+/* Close Button */
 .modal-close-btn {
   position: absolute;
   top: 18px;
   right: 20px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   color: #cbd5e1;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
-  z-index: 10;
+  transition: all 0.22s ease;
+  z-index: 20;
 }
 
 .modal-close-btn:hover {
   background: #ff6b00;
   border-color: #ff6b00;
   color: #ffffff;
-  transform: rotate(90deg);
+  transform: rotate(90deg) scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
 }
 
-/* Header */
-.modal-header {
+/* ==========================================================================
+   2-Column Layout
+   ========================================================================== */
+.modal-two-col-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   LEFT COLUMN: Official Flyer & Direct Contacts
+   ========================================================================== */
+.modal-brand-col {
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.04) 0%, rgba(2, 132, 199, 0.06) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-brand-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7 0%, #ff7a00 50%, #38bdf8 100%);
+}
+
+/* Flyer Header */
+.brand-flyer-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+}
+
+.brand-logo-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.flyer-c-logo {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.2) 0%, transparent 70%);
+}
+
+.c-svg-emblem {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 10px rgba(56, 189, 248, 0.4));
+}
+
+.flyer-brand-names {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.flyer-clickon {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #38bdf8;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+}
+
+.flyer-media {
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #ff7a00;
+  letter-spacing: 0.16em;
+  margin: 2px 0 0 0;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(255, 122, 0, 0.4);
+}
+
+.flyer-tagline {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.03em;
+  font-style: italic;
+}
+
+/* Contact Details matching Flyer */
+.flyer-contact-row,
+.flyer-address-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.flyer-contact-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.flyer-contact-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.phone-glow {
+  background: rgba(2, 132, 199, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
+}
+
+.pin-glow {
+  background: rgba(255, 107, 0, 0.18);
+  border: 1px solid rgba(255, 107, 0, 0.4);
+  color: #ff7a00;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+}
+
+.flyer-phones-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.phone-link-bold {
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 1.05rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.phone-link-bold:hover {
+  color: #38bdf8;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.5);
+  text-decoration: underline;
+}
+
+.phone-sep {
+  color: #64748b;
+  font-weight: 700;
+}
+
+.flyer-address-text {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.flyer-address-row a.flyer-address-text:hover {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Social Channels Grid (WhatsApp, Insta, FB, Call)
+   ========================================================================== */
+.modal-socials-box {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.socials-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #94a3b8;
+  margin-bottom: 8px;
+}
+
+.socials-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 4px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 0.73rem;
+  font-weight: 700;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
-  margin-bottom: 20px;
+}
+
+.social-btn svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;
+}
+
+.social-btn:hover svg {
+  transform: scale(1.15);
+}
+
+/* WhatsApp Brand */
+.social-wa {
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  color: #25d366;
+}
+.social-wa:hover {
+  background: #25d366;
+  color: #ffffff;
+  border-color: #25d366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+/* Instagram Brand */
+.social-insta {
+  background: rgba(225, 48, 108, 0.12);
+  border: 1px solid rgba(225, 48, 108, 0.4);
+  color: #f43f5e;
+}
+.social-insta:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #ffffff;
+  border-color: #f43f5e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(225, 48, 108, 0.45);
+}
+
+/* Facebook Brand */
+.social-fb {
+  background: rgba(24, 119, 242, 0.12);
+  border: 1px solid rgba(24, 119, 242, 0.4);
+  color: #3b82f6;
+}
+.social-fb:hover {
+  background: #1877f2;
+  color: #ffffff;
+  border-color: #1877f2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(24, 119, 242, 0.45);
+}
+
+/* Call Brand */
+.social-phone {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+.social-phone:hover {
+  background: #0284c7;
+  color: #ffffff;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+}
+
+/* ==========================================================================
+   QR Code & Services Box matching Flyer
+   ========================================================================== */
+.card-toggle-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: -4px;
+}
+
+.btn-toggle-flyer-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #38bdf8;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-toggle-flyer-card:hover {
+  background: rgba(56, 189, 248, 0.16);
+  border-color: #38bdf8;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.original-card-view {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.original-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.flyer-qr-wrapper {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 14px;
+  align-items: start;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.qr-card-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px 6px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+}
+
+.qr-card-link:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+}
+
+.qr-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  display: block;
+}
+
+.qr-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.qr-badge span:first-child {
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #15803d;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.qr-sub {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* Services Box matching Flyer */
+.flyer-services-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.our-services-header {
+  background: linear-gradient(90deg, #ff7a00 0%, #ea580c 100%);
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(255, 122, 0, 0.35);
+}
+
+.flyer-services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+
+.flyer-service-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.77rem;
+  color: #e2e8f0;
+  line-height: 1.3;
+}
+
+.service-dot {
+  color: #ff7a00;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: Consultation Booking Form
+   ========================================================================== */
+.modal-form-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-header {
+  margin-bottom: 16px;
 }
 
 .modal-eyebrow {
@@ -80,14 +535,14 @@
   gap: 8px;
   background: rgba(2, 132, 199, 0.16);
   border: 1px solid rgba(56, 189, 248, 0.4);
-  padding: 6px 16px;
+  padding: 4px 14px;
   border-radius: 9999px;
-  font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.74rem;
   font-weight: 800;
   color: #38bdf8;
   letter-spacing: 0.08em;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .modal-sparkle {
@@ -103,13 +558,13 @@
   box-shadow: 0 0 8px #ff6b00;
 }
 
-.modal-main-title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+.form-title {
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
   font-weight: 900;
   color: #ffffff;
   line-height: 1.25;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 }
 
 .gradient-text {
@@ -119,132 +574,30 @@
   display: inline;
 }
 
-.modal-subtitle {
+.form-subtitle {
   color: #94a3b8;
-  font-size: 0.92rem;
-  line-height: 1.5;
+  font-size: 0.86rem;
+  line-height: 1.45;
   margin: 0;
 }
 
-/* Quick Contacts */
-.modal-quick-contacts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.quick-contact-pill {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  border-radius: 14px;
-  text-decoration: none;
-  transition: all 0.25s ease;
-}
-
-.call-pill {
-  background: rgba(2, 132, 199, 0.12);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-}
-
-.call-pill:hover {
-  background: rgba(2, 132, 199, 0.25);
-  border-color: #38bdf8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.3);
-}
-
-.wa-pill {
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-}
-
-.wa-pill:hover {
-  background: rgba(16, 185, 129, 0.25);
-  border-color: #10b981;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
-}
-
-.quick-icon {
-  font-size: 1.3rem;
-}
-
-.quick-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.quick-label {
-  font-size: 0.74rem;
-  color: #94a3b8;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.quick-val {
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 800;
-  color: #ffffff;
-}
-
-/* Divider */
-.modal-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: 16px 0 20px 0;
-  text-align: center;
-}
-
-.modal-divider::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.modal-divider span {
-  position: relative;
-  background: #010f22;
-  padding: 0 12px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: #64748b;
-  text-transform: uppercase;
-}
-
-/* Form */
+/* Form inputs */
 .modal-form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-
-.form-row-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
   text-align: left;
 }
 
 .form-group label {
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
+  font-family: var(--font-heading, sans-serif);
+  font-size: 0.8rem;
   font-weight: 700;
   color: #cbd5e1;
 }
@@ -253,15 +606,16 @@
 .form-group select,
 .form-group textarea {
   background: rgba(255, 255, 255, 0.06);
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
-  padding: 11px 14px;
+  padding: 10px 14px;
   color: #ffffff;
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   outline: none;
-  transition: all 0.25s ease;
+  transition: all 0.22s ease;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .form-group input:focus,
@@ -279,45 +633,7 @@
 
 .form-group textarea {
   resize: vertical;
-  min-height: 55px;
-}
-
-/* Consultation Modes Grid */
-.consultation-modes-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.mode-choice {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 6px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #94a3b8;
-}
-
-.mode-choice input {
-  display: none;
-}
-
-.mode-choice:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-
-.mode-choice.selected {
-  background: rgba(2, 132, 199, 0.25);
-  border-color: #38bdf8;
-  color: #ffffff;
-  box-shadow: 0 0 12px rgba(2, 132, 199, 0.35);
+  min-height: 52px;
 }
 
 /* Submit Button */
@@ -326,18 +642,18 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 8px;
+  margin-top: 4px;
   background: linear-gradient(135deg, #0284c7 0%, #7e22ce 50%, #ff6b00 100%);
   color: #ffffff;
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, sans-serif);
   font-weight: 800;
-  padding: 15px 24px;
+  padding: 14px 22px;
   border-radius: 9999px;
-  font-size: 1.05rem;
+  font-size: 1rem;
   border: 1.5px solid rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 25px rgba(2, 132, 199, 0.4), 0 0 20px rgba(255, 107, 0, 0.3);
   cursor: pointer;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-consultation-submit:hover {
@@ -360,27 +676,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 14px;
+  margin-top: 14px;
+  padding-top: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.78rem;
+  font-size: 0.74rem;
   color: #94a3b8;
 }
 
 .trust-item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .trust-bullet {
   color: #ff6b00;
 }
 
-/* Success Screen */
+/* ==========================================================================
+   SUCCESS CONFIRMATION SCREEN
+   ========================================================================== */
 .modal-success-container {
   text-align: center;
-  padding: 20px 10px;
+  padding: 24px 16px;
 }
 
 .success-icon-animated {
@@ -418,7 +736,7 @@
 }
 
 .success-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, sans-serif);
   font-size: 1.6rem;
   font-weight: 900;
   color: #ffffff;
@@ -429,7 +747,7 @@
   color: #cbd5e1;
   font-size: 0.98rem;
   line-height: 1.6;
-  max-width: 440px;
+  max-width: 480px;
   margin: 0 auto 24px;
 }
 
@@ -437,7 +755,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 380px;
+  max-width: 400px;
   margin: 0 auto 20px;
 }
 
@@ -448,7 +766,7 @@
   gap: 10px;
   background: #25d366;
   color: #ffffff;
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, sans-serif);
   font-weight: 800;
   padding: 14px 20px;
   border-radius: 9999px;
@@ -464,11 +782,16 @@
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
 }
 
+.social-svg-btn {
+  width: 22px;
+  height: 22px;
+}
+
 .btn-modal-done {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
-  font-family: var(--font-heading);
+  font-family: var(--font-heading, sans-serif);
   font-weight: 700;
   padding: 12px 20px;
   border-radius: 9999px;
@@ -481,7 +804,22 @@
   border-color: #ff6b00;
 }
 
-/* Modal Animations */
+.modal-trust-footer-center {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+.modal-trust-footer-center p {
+  margin: 4px 0;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
 @keyframes modalFadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -489,7 +827,7 @@
 
 @keyframes modalScaleUp {
   from {
-    transform: translateY(24px) scale(0.95);
+    transform: translateY(24px) scale(0.96);
     opacity: 0;
   }
   to {
@@ -498,24 +836,53 @@
   }
 }
 
-/* Responsive */
-@media screen and (max-width: 600px) {
-  .modal-box.modal-consultation {
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media screen and (max-width: 860px) {
+  .modal-box.modal-consultation-grand {
     padding: 26px 20px;
     border-radius: 20px;
+    max-height: 94vh;
   }
 
-  .form-row-2 {
+  .modal-two-col-layout {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 22px;
   }
 
-  .modal-quick-contacts {
-    grid-template-columns: 1fr;
+  .flyer-qr-wrapper {
+    grid-template-columns: 100px 1fr;
   }
 
-  .consultation-modes-grid {
+  .flyer-services-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .modal-box.modal-consultation-grand {
+    padding: 22px 16px;
+    border-radius: 18px;
+  }
+
+  .socials-icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .flyer-qr-wrapper {
     grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .our-services-header {
+    align-self: center;
+  }
+
+  .flyer-services-list {
+    grid-template-columns: 1fr;
+    text-align: left;
   }
 
   .modal-trust-footer {
