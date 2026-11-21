@@ -246,40 +246,6 @@ export default function Hero({ onOpenContact, onNavigate }) {
         </div>
       </div>
 
-      {/* 3. Continuous Running Marquee Ticker at Bottom */}
-      <div className="schbang-ticker-bar">
-        <div className="schbang-ticker-track">
-          {[...Array(4)].map((_, idx) => (
-            <div className="schbang-ticker-cluster" key={idx}>
-              <span className="ticker-item">
-                GROW YOUR BRAND <span className="ticker-highlight">• REACH MORE CUSTOMERS</span>
-              </span>
-              <span className="ticker-burst">✸</span>
-              <span className="ticker-item">
-                AUTOMATE YOUR BUSINESS <span className="ticker-highlight">• 100% ROI</span>
-              </span>
-              <span className="ticker-burst">✸</span>
-              <span className="ticker-item ticker-brand">
-                CLICK ON <span className="ticker-highlight">MEDIA</span>
-              </span>
-              <span className="ticker-burst">✸</span>
-              <span className="ticker-item">
-                HIGH PERFORMANCE <span className="ticker-highlight">SEO & WEB</span>
-              </span>
-              <span className="ticker-burst">✸</span>
-              <span className="ticker-item">
-                4K VIDEO & <span className="ticker-highlight">VIRAL REELS</span>
-              </span>
-              <span className="ticker-burst">✸</span>
-              <span className="ticker-item">
-                ADS & <span className="ticker-highlight">MONETIZATION</span>
-              </span>
-              <span className="ticker-burst">✸</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Audio Mute/Unmute Toggle Button */}
       <AudioToggle isMuted={isMuted} onToggle={handleToggleAudio} />
 

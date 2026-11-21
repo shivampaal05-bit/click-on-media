@@ -9,7 +9,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   overflow: hidden;
   padding-top: 85px; /* Fixed Navbar Clearance */
   box-sizing: border-box;
@@ -513,7 +513,7 @@
 
 .scroll-indicator {
   position: absolute;
-  bottom: 80px;
+  bottom: 28px;
   right: 36px;
   z-index: 20;
   cursor: pointer;
